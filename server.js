@@ -1,12 +1,15 @@
 import express from "express";
 import cors from "cors";
 import NodeCache from "node-cache";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 import { getAllApr } from "./apps/apr.js";
 import { getEmits } from "./apps/emits.js";
 import { getPrice } from "./apps/price.js";
 
-const port = 5000;
+const port = process.env.PORT;
 
 const cache = new NodeCache({
   stdTTL: 60 * 30,
@@ -21,8 +24,9 @@ app.get("/apr", async (req, res) => {
   let savedAprData = cache.get("savedAprData");
   if (!savedAprData) {
     savedAprData = await getAllApr();
+    cache.set("savedAprData", savedAprData);
   }
-  res.json(result);
+  res.json(savedAprData);
 });
 
 app.get("/emits", async (req, res) => {
