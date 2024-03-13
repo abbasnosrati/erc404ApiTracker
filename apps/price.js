@@ -86,11 +86,7 @@ async function main(
 
   const percentChange = absoluteChange / price;
 
-  return {
-    price: price,
-    priceAfter: priceAfter,
-    percentChange: (percentChange * 100).toFixed(3) + "%",
-  };
+  return price;
 }
 
 export const getPrice = async () => {
