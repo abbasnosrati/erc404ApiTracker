@@ -12,8 +12,8 @@ import { getPrice } from "./apps/price.js";
 const port = process.env.PORT;
 
 const cache = new NodeCache({
-  stdTTL: 60 * 30,
-  checkperiod: 1000 * 60 * 5,
+  stdTTL: 60,
+  checkperiod: 3000 * 10,
 });
 
 const app = express();

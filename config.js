@@ -40,8 +40,6 @@ export const config = [
 //uniswap v3 config
 // Can find QUOTER2_ADDRESS and FACTORY_ADDRESS for specific Chain in: https://docs.uniswap.org/contracts/v3/reference/deployments
 
-//calculate token0 to token1
-
 export const getPriceConfig = [
   // {
   //   name: "Mainnet",
