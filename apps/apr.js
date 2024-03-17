@@ -48,7 +48,7 @@ export const getAllApr = async () => {
   await Promise.all(
     config.map(async (item) => {
       const res = await getApr(item.contractAddress, item.rpc);
-      reports[item.chainName] = res;
+      reports[item.chainId] = res;
     })
   );
   return reports;

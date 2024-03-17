@@ -104,7 +104,7 @@ export const getPrice = async () => {
         item.FACTORY_ADDRESS,
         item.QUOTER2_ADDRESS
       );
-      data[item.name] = res;
+      data[item.chainId] = res;
     })
   );
   return data;

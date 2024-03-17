@@ -12,26 +12,31 @@ export const config = [
   // },
   {
     chainName: "bsc",
+    chainId: "56",
     rpc: "https://rpc.ankr.com/bsc",
     contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
   },
   {
     chainName: "arb",
+    chainId: "42161",
     rpc: "https://rpc.ankr.com/bsc",
     contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
   },
   {
     chainName: "opti",
+    chainId: "10",
     rpc: "https://rpc.ankr.com/bsc",
     contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
   },
   {
     chainName: "base",
+    chainId: "8453",
     rpc: "https://rpc.ankr.com/bsc",
     contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
   },
   {
     chainName: "blast",
+    chainId: "238",
     rpc: "https://rpc.ankr.com/bsc",
     contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
   },
@@ -55,6 +60,7 @@ export const getPriceConfig = [
   // },
   {
     name: "bsc",
+    chainId: "56",
     rpc: "https://rpc.ankr.com/bsc",
     tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
     decimalsIn: "18",
@@ -67,6 +73,7 @@ export const getPriceConfig = [
   },
   {
     name: "arb",
+    chainId: "42161",
     rpc: "https://rpc.ankr.com/bsc",
     tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
     decimalsIn: "18",
@@ -79,6 +86,7 @@ export const getPriceConfig = [
   },
   {
     name: "opti",
+    chainId: "10",
     rpc: "https://rpc.ankr.com/bsc",
     tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
     decimalsIn: "18",
@@ -91,6 +99,7 @@ export const getPriceConfig = [
   },
   {
     name: "base",
+    chainId: "8453",
     rpc: "https://rpc.ankr.com/bsc",
     tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
     decimalsIn: "18",
@@ -103,6 +112,7 @@ export const getPriceConfig = [
   },
   {
     name: "blast",
+    chainId: "238",
     rpc: "https://rpc.ankr.com/bsc",
     tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
     decimalsIn: "18",
