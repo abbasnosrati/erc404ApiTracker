@@ -40,6 +40,18 @@ export const config = [
     rpc: "https://rpc.ankr.com/bsc",
     contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
   },
+  {
+    chainName: "sepolia",
+    chainId: "11155111",
+    rpc: "https://rpc.ankr.com/bsc",
+    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+  },
+  {
+    chainName: "mumbai",
+    chainId: "80001",
+    rpc: "https://rpc.ankr.com/bsc",
+    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+  },
 ];
 
 //uniswap v3 config
@@ -50,7 +62,7 @@ export const getPriceConfig = [
   //   name: "Mainnet",
   //   rpc: INFURA_URL,
   //   tokenIn: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", //weth
-  //   decimalsIn: "18",
+  //   decimalsIn: "18",11155111
   //   tokenOut: "0xdAC17F958D2ee523a2206206994597C13D831ec7", //usdt
   //   decimalsOut: "6",
   //   QUOTER2_ADDRESS: "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
@@ -113,6 +125,34 @@ export const getPriceConfig = [
   {
     name: "blast",
     chainId: "238",
+    rpc: "https://rpc.ankr.com/bsc",
+    tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
+    decimalsIn: "18",
+    tokenOut: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //usdc
+    decimalsOut: "18",
+    QUOTER2_ADDRESS: "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+    FACTORY_ADDRESS: "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+    fee: 3000,
+    inputAmount: "1",
+  },
+
+  {
+    name: "sepolia",
+    chainId: "11155111",
+    rpc: "https://rpc.ankr.com/bsc",
+    tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
+    decimalsIn: "18",
+    tokenOut: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //usdc
+    decimalsOut: "18",
+    QUOTER2_ADDRESS: "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+    FACTORY_ADDRESS: "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+    fee: 3000,
+    inputAmount: "1",
+  },
+
+  {
+    name: "mumbai",
+    chainId: "80001",
     rpc: "https://rpc.ankr.com/bsc",
     tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
     decimalsIn: "18",
