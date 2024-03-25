@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import { stakeContractAbi } from "../abis/abi.js";
 import { a_year_seconds } from "../constants/constants.js";
 import { config } from "../config.js";
+import { rpc_list } from "../config.js";
+
 dotenv.config();
 
 function formatNumber(num) {
@@ -26,29 +28,41 @@ const getRequiredData = async (contract) => {
   };
 };
 
-const getApr = async (contractAddress, rpc) => {
-  const provider = new ethers.providers.JsonRpcProvider(rpc);
+const getApr = async (contractAddress, rpc_list, index) => {
+  try {
+    const provider = new ethers.providers.JsonRpcProvider(rpc_list[index]);
+    const contract = new ethers.Contract(
+      contractAddress,
+      stakeContractAbi,
+      provider
+    );
 
-  const contract = new ethers.Contract(
-    contractAddress,
-    stakeContractAbi,
-    provider
-  );
+    const data = await getRequiredData(contract);
 
-  const data = await getRequiredData(contract);
-
-  const apr =
-    ((data.reward_rate * a_year_seconds) / data.pion_staked_in_staking) * 100;
-
-  return apr;
+    const apr =
+      ((data.reward_rate * a_year_seconds) / data.pion_staked_in_staking) * 100;
+    return apr;
+  } catch {
+    if (index + 1 < rpc_list.length)
+      return await getApr(contractAddress, rpc_list, index + 1);
+  }
 };
 
 export const getAllApr = async () => {
   const reports = {};
   await Promise.all(
     config.map(async (item) => {
-      const res = await getApr(item.contractAddress, item.rpc);
-      reports[item.chainId] = res;
+      if (item.contractAddress) {
+        console.log(rpc_list[item.chainId][0]);
+        const res = await getApr(
+          item.contractAddress,
+          rpc_list[item.chainId],
+          0
+        );
+        reports[item.chainId] = res ? res : 0;
+      } else {
+        reports[item.chainId] = 0;
+      }
     })
   );
   return reports;

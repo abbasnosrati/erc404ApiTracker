@@ -3,6 +3,35 @@ dotenv.config();
 
 const INFURA_URL = process.env.INFURA_URL;
 
+export const rpc_list = {
+  56: [
+    "https://rpc.ankr.com/bsc",
+    "https://bsc-pokt.nodies.app",
+    "https://bsc-dataseed1.defibit.io",
+  ],
+  42161: [
+    "https://rpc.ankr.com/arbitrum",
+    "https://endpoints.omniatech.io/v1/arbitrum/one/public",
+    "https://arbitrum.llamarpc.com",
+  ],
+  10: [
+    "https://rpc.ankr.com/optimism",
+    "https://op-pokt.nodies.app",
+    "https://optimism-rpc.publicnode.com",
+  ],
+  8453: [
+    "https://rpc.ankr.com/base",
+    "https://developer-access-mainnet.base.org",
+    "https://mainnet.base.org",
+  ],
+
+  81457: [
+    "https://rpc.ankr.com/blast",
+    "https://blast.blockpi.network/v1/rpc/public",
+    "https://blastl2-mainnet.public.blastapi.io",
+  ],
+};
+
 //Apr config
 export const config = [
   // {
@@ -14,44 +43,44 @@ export const config = [
     chainName: "bsc",
     chainId: "56",
     rpc: "https://rpc.ankr.com/bsc",
-    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+    contractAddress: "0xC34bEdA2B2a65C373B28218995bFb9100a348257",
   },
   {
     chainName: "arb",
     chainId: "42161",
-    rpc: "https://rpc.ankr.com/bsc",
-    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+    rpc: "https://rpc.ankr.com/arbitrum",
+    contractAddress: "",
   },
   {
     chainName: "opti",
     chainId: "10",
-    rpc: "https://rpc.ankr.com/bsc",
-    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+    rpc: "https://rpc.ankr.com/optimism",
+    contractAddress: "",
   },
   {
     chainName: "base",
     chainId: "8453",
-    rpc: "https://rpc.ankr.com/bsc",
-    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+    rpc: "https://rpc.ankr.com/base",
+    contractAddress: "",
   },
   {
     chainName: "blast",
-    chainId: "238",
-    rpc: "https://rpc.ankr.com/bsc",
-    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+    chainId: "81457",
+    rpc: "https://rpc.ankr.com/blast",
+    contractAddress: "",
   },
-  {
-    chainName: "sepolia",
-    chainId: "11155111",
-    rpc: "https://rpc.ankr.com/bsc",
-    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
-  },
-  {
-    chainName: "mumbai",
-    chainId: "80001",
-    rpc: "https://rpc.ankr.com/bsc",
-    contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
-  },
+  // {
+  //   chainName: "sepolia",
+  //   chainId: "11155111",
+  //   rpc: "https://rpc.ankr.com/bsc",
+  //   contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+  // },
+  // {
+  //   chainName: "mumbai",
+  //   chainId: "80001",
+  //   rpc: "https://rpc.ankr.com/bsc",
+  //   contractAddress: "0xCf5093AACC4Aa9fff703C365727309aDb5e81A0d",
+  // },
 ];
 
 //uniswap v3 config
@@ -124,7 +153,7 @@ export const getPriceConfig = [
   },
   {
     name: "blast",
-    chainId: "238",
+    chainId: "81457",
     rpc: "https://rpc.ankr.com/bsc",
     tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
     decimalsIn: "18",
@@ -136,31 +165,31 @@ export const getPriceConfig = [
     inputAmount: "1",
   },
 
-  {
-    name: "sepolia",
-    chainId: "11155111",
-    rpc: "https://rpc.ankr.com/bsc",
-    tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
-    decimalsIn: "18",
-    tokenOut: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //usdc
-    decimalsOut: "18",
-    QUOTER2_ADDRESS: "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
-    FACTORY_ADDRESS: "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-    fee: 3000,
-    inputAmount: "1",
-  },
+  // {
+  //   name: "sepolia",
+  //   chainId: "11155111",
+  //   rpc: "https://rpc.ankr.com/bsc",
+  //   tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
+  //   decimalsIn: "18",
+  //   tokenOut: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //usdc
+  //   decimalsOut: "18",
+  //   QUOTER2_ADDRESS: "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+  //   FACTORY_ADDRESS: "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+  //   fee: 3000,
+  //   inputAmount: "1",
+  // },
 
-  {
-    name: "mumbai",
-    chainId: "80001",
-    rpc: "https://rpc.ankr.com/bsc",
-    tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
-    decimalsIn: "18",
-    tokenOut: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //usdc
-    decimalsOut: "18",
-    QUOTER2_ADDRESS: "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
-    FACTORY_ADDRESS: "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-    fee: 3000,
-    inputAmount: "1",
-  },
+  // {
+  //   name: "mumbai",
+  //   chainId: "80001",
+  //   rpc: "https://rpc.ankr.com/bsc",
+  //   tokenIn: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", //wbnb
+  //   decimalsIn: "18",
+  //   tokenOut: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", //usdc
+  //   decimalsOut: "18",
+  //   QUOTER2_ADDRESS: "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+  //   FACTORY_ADDRESS: "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+  //   fee: 3000,
+  //   inputAmount: "1",
+  // },
 ];
