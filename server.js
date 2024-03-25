@@ -48,7 +48,9 @@ app.get("/stats", async (req, res) => {
   if (!savedStatsData) {
     const data = {};
     data["apr"] = await getAllApr();
-    data["emits"] = await getEmits();
+    const res = await getEmits();
+    data["emits"] = res.value;
+    data["day"] = res.day;
     data["prices"] = await getPrice();
     savedStatsData = data;
     cache.set("savedStatsData", savedStatsData);

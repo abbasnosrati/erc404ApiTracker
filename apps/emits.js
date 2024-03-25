@@ -33,9 +33,8 @@ export const getEmits = () => {
   const timeDifferenceInMilliseconds =
     currentTimestampInMilliseconds - startDate;
 
-  const daysPassed = Math.floor(
-    timeDifferenceInMilliseconds / millisecondsInDay
-  );
+  const daysPassed =
+    Math.floor(timeDifferenceInMilliseconds / millisecondsInDay) + 1;
 
   return { value: calculateEmits(daysPassed), day: daysPassed };
 };
