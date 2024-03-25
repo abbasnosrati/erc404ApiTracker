@@ -37,5 +37,5 @@ export const getEmits = () => {
     timeDifferenceInMilliseconds / millisecondsInDay
   );
 
-  return calculateEmits(daysPassed);
+  return { value: calculateEmits(daysPassed), day: daysPassed };
 };
