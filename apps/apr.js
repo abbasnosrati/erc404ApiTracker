@@ -53,7 +53,6 @@ export const getAllApr = async () => {
   await Promise.all(
     config.map(async (item) => {
       if (item.contractAddress) {
-        console.log(rpc_list[item.chainId][0]);
         const res = await getApr(
           item.contractAddress,
           rpc_list[item.chainId],
